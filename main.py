@@ -38,18 +38,19 @@ def say_answers(prefix, suffix, question_i, answers_i):
 
 
 print(
-    "Hi, I'm here to tell you about jahangirnagar university. \
-                what do you want to know about jahangirnagar university?"
+    "Hi, I'm here to tell you about Universidade federal do ceará. \
+                what do you want to know about Universidade federal do ceará?"
 )
 flg = True
 while flg:
     # Q/A
     print("\n\n")
-    asked_question = str(input("what is in your mind: ")).lower()
+    asked_question = str(input("Oque você quer saber? ")).lower()
 
     if (
         "name of the university" in asked_question
         or "university name" in asked_question
+        or "nome da universidade" in asked_question
     ):
         # Q: what is the name of the university?
         question = "UniversityName"
@@ -60,54 +61,60 @@ while flg:
     elif (
         "introduction" in asked_question
         or "about ju" in asked_question
-        or "about jahangirnagar university" in asked_question
+        or "about Universidade federal do ceará, Campus Jardins de Anita" in asked_question
+        or "me fale sobre a universidade" in asked_question
     ):
-        # Q: what is jahangirnagar university?
+        # Q: what is Universidade federal do ceará, Campus Jardins de Anita?
         question = "Introduction"
-        query = "introduction('jahangirnagar university', " + question + ")."
+        query = "introduction('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers("", "", question, answers)
 
     elif (
         "history of ju" in asked_question
-        or "history of jahangirnagar university" in asked_question
+        or "history of Universidade federal do ceará, Campus Jardins de Anita" in asked_question
+        or "história da universidade" in asked_question
     ):
-        # Q: history of jahangirnagar university.
+        # Q: history of Universidade federal do ceará, Campus Jardins de Anita.
         question = "History"
-        query = "history('jahangirnagar university', " + question + ")."
+        query = "history('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers("Brief history: ", "", question, answers)
 
     elif (
-        "location of jahangirnagar university" in asked_question
+        "localização da universidade" in asked_question
         or "situated" in asked_question
     ):
-        # Q: where is jahangirnagar university?
-        question = "Loction"
-        query = "location('jahangirnagar university', " + question + ")."
+        # Q: where is Universidade federal do ceará, Campus Jardins de Anita?
+        question = "Location"
+        query = "location('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers("", "", question, answers)
 
-    elif "area of jahangirnagar university" in asked_question:
-        # Q: where is jahangirnagar university?
+    elif ("area of Universidade federal do ceará, Campus Jardins de Anita" in asked_question
+        or "area da faculdade" in asked_question
+    ):
+        # Q: where is Universidade federal do ceará, Campus Jardins de Anita?
         question = "Area"
-        query = "area('jahangirnagar university', " + question + ")."
+        query = "area('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "total area of jahangirnagar university is about ", "", question, answers
+            "total area of Universidade federal do ceará, Campus Jardins de Anita is about ", "", question, answers
         )
 
     elif (
         "current" in asked_question
         or "present" in asked_question
         or "now" in asked_question
-    ) and ("vice chancellor" in asked_question or "vc" in asked_question):
-        # Q: who is the current vice_chancellor of jahangirnagar university?
+        or "quem é o diretor da faculdade" in asked_question
+        or "diretor" in asked_question
+    )and ("vice chancellor" in asked_question or "vc" in asked_question):
+        # Q: who is the current vice_chancellor of Universidade federal do ceará, Campus Jardins de Anita?
         question = "Vice_chancellor"
-        query = "vice_chancellor('jahangirnagar university', " + question + ")."
+        query = "vice_chancellor('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "The current vice chancellor of jahangirnagar university is ",
+            "The current vice chancellor of Universidade federal do ceará, Campus Jardins de Anita is ",
             "",
             question,
             answers,
@@ -120,22 +127,23 @@ while flg:
     ):
         # Q how many faculties are in jahangirnagr university
         question = "Number_of_faculties"
-        query = "number_of_faculties('jahangirnagar university', " + question + ")."
+        query = "number_of_faculties('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "There are ", "faculties in jahangirnagar university", question, answers
+            "There are ", "faculties in Universidade federal do ceará, Campus Jardins de Anita", question, answers
         )
 
     elif (
         "number of departments" in asked_question
         or "how many departments" in asked_question
+        or "quantos cursos tem a faculdade" in asked_question
     ):
         # Q how many departments are in jahangirnagr university
         question = "Number_of_departments"
-        query = "number_of_departments('jahangirnagar university', " + question + ")."
+        query = "number_of_departments('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "There are ", "departments in jahangirnagar university", question, answers
+            "There are ", "cursos in Universidade federal do ceará, Campus Jardins de Anita", question, answers
         )
 
     elif (
@@ -144,22 +152,22 @@ while flg:
     ):
         # Q how many institutes are in jahangirnagr university
         question = "Number_of_institutes"
-        query = "number_of_institutes('jahangirnagar university', " + question + ")."
+        query = "number_of_institutes('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "There are ", "institutes in jahangirnagar university", question, answers
+            "There are ", "institutes in Universidade federal do ceará, Campus Jardins de Anita", question, answers
         )
 
     elif (
         "names of the faculties" in asked_question
         or "what are the faculties" in asked_question
     ):
-        # Q what are the faculties in jahangirnagar university
+        # Q what are the faculties in Universidade federal do ceará, Campus Jardins de Anita
         question = "Facultiy"
-        query = "faculties('jahangirnagar university', " + question + ")."
+        query = "faculties('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "there are 6 faculties are in jahangirnagar university, they are, ",
+            "there are 1 faculties are in Universidade federal do ceará, Campus Jardins de Anita, they are, ",
             "",
             question,
             answers,
@@ -168,15 +176,11 @@ while flg:
     elif (
         "names of the departments" in asked_question
         or "what are the departments" in asked_question
+        or "quais são os cursos" in asked_question
     ) and "under the faculty of" in asked_question:
         # Q what are the names departments in faculty of X?
         faculties = [
-            "faculty of mathematical and physical science",
-            "faculty of biological science",
-            "faculty of social science",
-            "faculty of arts and humanities",
-            "faculty of business studies",
-            "faculty of law",
+            "faculty of technology"
         ]
         id = -1
         for i in range(6):
@@ -187,7 +191,7 @@ while flg:
             print(faculties[id])
             question = "Departments"
             query = (
-                "departments_under_faculty('jahangirnagar university', '"
+                "departments_under_faculty('Universidade federal do ceará, Campus Jardins de Anita', '"
                 + faculties[id]
                 + "',"
                 + question
@@ -204,12 +208,12 @@ while flg:
         "names of the departments" in asked_question
         or "what are the departments" in asked_question
     ):
-        # Q what are the departments in jahangirnagar university
+        # Q what are the departments in Universidade federal do ceará, Campus Jardins de Anita
         question = "Departments"
-        query = "departments('jahangirnagar university', " + question + ")."
+        query = "departments('Universidade federal do ceará, Campus Jardins de Anita', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "there are 34 departments in jahangirnagar university, they are, ",
+            "there are 3 departments in Universidade federal do ceará, Campus Jardins de Anita, they are, ",
             "",
             question,
             answers,
@@ -221,11 +225,11 @@ while flg:
         or "about computer science and engineering" in asked_question
         or "about department of computer science and engineering" in asked_question
     ):
-        # Q what you know about dept of CSE jahangirnagar university
+        # Q what you know about dept of CSE Universidade federal do ceará, Campus Jardins de Anita
         question = "Cse"
         query = (
             "about_department_of_computer_science_and_engineering(\
-                'jahangirnagar university', "
+                'Universidade federal do ceará, Campus Jardins de Anita', "
             + question
             + ")."
         )
